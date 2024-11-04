@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐系統</title>
+    <style>
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">點餐系統</h1>
+    <form action="submit_order_02.php" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>菜品</th>
+                    <th>單價</th>
+                    <th>數量</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>漢堡</td>
+                    <td>100元</td>
+                    <td><input type="number" name="burger_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>薯條</td>
+                    <td>50元</td>
+                    <td><input type="number" name="fries_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>可樂</td>
+                    <td>30元</td>
+                    <td><input type="number" name="coke_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>沙拉</td>
+                    <td>70元</td>
+                    <td><input type="number" name="salad_qty" min="0" value="0"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="submit" value="提交訂單">
+        </div>
+    </form>
+
+</body>
+
+</html>

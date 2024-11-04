@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機器人</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .head {
+            width: 200px;
+            height: 100px;
+            /* 正方形 */
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            /* 文字顏色 */
+            font-weight: bold;
+        }
+
+        .main {
+            width: 150px;
+            height: 120px;
+            background-color: green;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            /* 文字顏色 */
+            font-weight: bold;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            width: 120px;
+        }
+
+        .foot {
+            width: 50px;
+            height: 220px;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            /* 文字顏色 */
+            font-weight: bold;
+        }
+
+        .foot.yellow {
+            background-color: yellow;
+            color: black;
+            /* 文字顏色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">Header</div>
+    <div class="main">Body</div>
+    <div class="footer">
+        <div class="foot">Blue</div>
+        <div class="foot yellow">Yellow</div>
+    </div>
+</body>
+
+</html>

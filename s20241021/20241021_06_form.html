@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食訂購表單</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        label {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        input[type="number"] {
+            width: 60px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .price {
+            margin-left: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>美食訂購表單</h1>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="hamburger">漢堡 (價格: $100)：</label>
+            <input type="number" id="hamburger" name="hamburger" min="0" placeholder="數量">
+        </div>
+
+        <div class="form-group">
+            <label for="fries">薯條 (價格: $50)：</label>
+            <input type="number" id="fries" name="fries" min="0" placeholder="數量">
+        </div>
+
+        <div class="form-group">
+            <label for="cola">可樂 (價格: $30)：</label>
+            <input type="number" id="cola" name="cola" min="0" placeholder="數量">
+        </div>
+
+        <div class="form-group">
+            <label for="salad">沙拉 (價格: $70)：</label>
+            <input type="number" id="salad" name="salad" min="0" placeholder="數量">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="提交訂單">
+        </div>
+    </form>
+
+</body>
+
+</html>

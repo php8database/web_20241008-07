@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐系統</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        input[type="number"] {
+            width: 60px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>點餐系統</h1>
+    <form action="submit_order.php" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>食品</th>
+                    <th>價格</th>
+                    <th>數量</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>漢堡</td>
+                    <td>$100</td>
+                    <td><input type="number" name="hamburger" min="0" placeholder="數量"></td>
+                </tr>
+                <tr>
+                    <td>薯條</td>
+                    <td>$50</td>
+                    <td><input type="number" name="fries" min="0" placeholder="數量"></td>
+                </tr>
+                <tr>
+                    <td>可樂</td>
+                    <td>$30</td>
+                    <td><input type="number" name="cola" min="0" placeholder="數量"></td>
+                </tr>
+                <tr>
+                    <td>沙拉</td>
+                    <td>$70</td>
+                    <td><input type="number" name="salad" min="0" placeholder="數量"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <input type="submit" value="提交訂單">
+        </div>
+    </form>
+
+</body>
+
+</html>
