@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四角有間距的表情</title>
+    <style>
+        /* 全局設定，防止元素溢出 */
+        * {
+            box-sizing: border-box;
+            margin: 32px;
+            padding: 0;
+        }
+
+        /* 固定定位容器 */
+        .fixed-box {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            /* 視窗寬度 */
+            height: 100vh;
+            /* 視窗高度 */
+            display: flex;
+            justify-content: center;
+            /* 居中 */
+            align-items: center;
+            /* 垂直居中 */
+            pointer-events: none;
+            /* 防止被點擊 */
+        }
+
+        /* 綠色背景盒子 */
+        .green-box {
+            width: 60%;
+            /* 60% 宽度 */
+            height: 60%;
+            /* 60% 高度 */
+            background-color: lightgreen;
+            position: relative;
+        }
+
+        /* 粉紅色盒子，定位在左上角，增加間距 */
+        .pink-box {
+            position: absolute;
+            top: 10px;
+            /* 增加與上邊緣的間距 */
+            left: 10px;
+            /* 增加與左邊緣的間距 */
+            width: 150px;
+            height: 150px;
+            background-color: lightpink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            border: 5px solid darkred;
+            /* 邊框顏色和寬度 */
+        }
+
+        /* 黃色盒子，定位在左下角，增加間距 */
+        .y-box {
+            position: absolute;
+            bottom: 10px;
+            /* 增加與下邊緣的間距 */
+            left: 10px;
+            /* 增加與左邊緣的間距 */
+            width: 150px;
+            height: 150px;
+            background-color: lightyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            border: 5px solid goldenrod;
+            /* 邊框顏色和寬度 */
+        }
+
+        /* 藍色盒子，定位在右上角，增加間距 */
+        .x-box {
+            position: absolute;
+            top: 10px;
+            /* 增加與上邊緣的間距 */
+            right: 10px;
+            /* 增加與右邊緣的間距 */
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            border: 5px solid royalblue;
+            /* 邊框顏色和寬度 */
+        }
+
+        /* 天藍色盒子，定位在右下角，增加間距 */
+        .z-box {
+            position: absolute;
+            bottom: 10px;
+            /* 增加與下邊緣的間距 */
+            right: 10px;
+            /* 增加與右邊緣的間距 */
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            border: 5px solid deepskyblue;
+            /* 邊框顏色和寬度 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-box">
+        <div class="green-box">
+            <div class="pink-box">(*‘ v`*)</div>
+            <div class="y-box">(^u^)</div>
+            <div class="x-box">(｡◕∀◕｡)</div>
+            <div class="z-box">(✪ω✪)</div>
+        </div>
+    </div>
+</body>
+
+</html>
