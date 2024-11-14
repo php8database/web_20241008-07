@@ -1,18 +1,14 @@
 * {
     box-sizing: border-box;
     overflow: hidden;
-    
 }
 
 /* header */
 header {
     width: 1024px;
     height: 65px;
-    /* background-color: lightblue; */
+    background-color: rgb(212, 117, 238);
     margin: auto;
-    border: 1px solid black;
-    border-bottom: 0;
-    
 }
 
 /* container */
@@ -22,7 +18,7 @@ header {
     /* - 65px ok */
     /* -65 ng */
     height: calc(768px - 65px - 20px);
-    /* background-color: lightyellow; */
+    background-color: rgb(180, 76, 172);
     margin: auto;
 }
 
@@ -30,29 +26,26 @@ header {
 aside {
     width: 215px;
     height: calc(768px - 65px - 20px);
-    /* background-color: blueviolet; */
+    background-color: rgb(116, 17, 209);
 
     display: flex;
     flex-direction: column;
 }
-.aside-header{
+
+.aside-header {
     width: 100%;
     /* flex-basis: 100px; */
     /* height: calc(100% - 25px); */
     /* flex-direction 主軸長度 item method */
     flex-basis: calc(100% - 25px);
-    /* background-color: lightpink; */
-    border: 1px solid black;
-    border-right: 0;
+    background-color: rgb(195, 141, 231);
 }
 
-.aside-footer{
+.aside-footer {
     width: 100%;
     flex-basis: 25px;
-    /* background-color: lightblue; */
-    border: 1px solid black;
-    border-top: 0;
-    border-right: 0;
+    background-color: rgba(221, 225, 226, 0.726);
+
 
 }
 
@@ -61,30 +54,25 @@ aside {
 main {
     width: calc(1024px - 215px);
     height: calc(768px - 65px - 20px);
-    /* background-color: aquamarine;     */
+    background-color: rgb(255, 255, 255);
 }
 
-.main-header{
+.main-header {
     width: 100%;
     height: 29px;
-    /* background-color: red; */
-    border: 1px solid black;
-    border-bottom: 0;
+    background-color: rgb(209, 180, 180);
 }
 
-.main-footer{
+.main-footer {
     width: 100%;
     height: calc(100% - 29px);
-    /* background-color: cadetblue; */
-    border: 1px solid black;
+    background-color: rgb(192, 119, 119);
 }
 
 /* footer */
 footer {
     width: 1024px;
     height: 20px;
-    /* background-color: lightcoral; */
+    background-color: rgb(116, 107, 107);
     margin: auto;
-    border: 1px solid black;
-    border-top: 0;
 }
