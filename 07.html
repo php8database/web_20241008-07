@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投籃大賽</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            transition: background-color 1s ease;
+        }
+
+        .box1 {
+            border: 5px solid #e0f7fa;
+            margin: auto;
+            width: 80%;
+            height: 50vh;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(224, 247, 250, 0.8); /* 淺藍色背景 */
+        }
+
+        .box2 {
+            margin: auto;
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 45vh;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .btn {
+            border-radius: 50px;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+        }
+
+        .btn-dark, .btn-danger {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-dark:hover, .btn-danger:hover {
+            opacity: 0.8;
+        }
+
+        span {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .header-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center mt-5">
+        <h2 class="header-text">投籃大賽</h2>
+        <hr>
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-2">
+                <div class="img-box">
+                    <img src="./images/ball_left.png" class="img-fluid mt-3 rounded" alt="" srcset="">
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="box1">
+                    <div class="container-box">
+                        <div>
+                            倒數計時<br>
+                            <span id="timer">60</span>
+                        </div>
+                        <div>
+                            最高分數<br>
+                            <span id="highscore">999</span>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <p>
+                        分數
+                    </p>
+                    <p>
+                        <span id="score">168</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="img-box">
+                    <img src="./images/ball.png" class="img-fluid mt-3 rounded" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="box2">
+            <button type="button" id="startBtn" class="btn btn-dark btn-lg">開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
+            <button type="button" id="shootBtn" class="btn btn-dark btn-lg">投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
+            <button type="button" id="resetBtn" class="btn btn-danger btn-lg">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+        </div>
+        <hr>
+    </div>
+
+    <footer class="text-center mt-5 footer-text">
+        <p>設計與開發 | 投籃大賽 2025</p>
+    </footer>
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        $(document).ready(function () {
+            let timer;
+            let countdown = 60;
+            let score = 168;
+            let highscore = 999;
+            let isGameStarted = false;
+
+            // 開始遊戲
+            $('#startBtn').click(function () {
+                if (!isGameStarted) {
+                    isGameStarted = true;
+                    $(this).text('暫停');
+                    startCountdown();
+                } else {
+                    isGameStarted = false;
+                    $(this).text('開始');
+                    clearInterval(timer);
+                }
+            });
+
+            // 投球
+            $('#shootBtn').click(function () {
+                if (isGameStarted) {
+                    let points = Math.floor(Math.random() * 3) + 1; // 隨機1-3分
+                    score += points;
+                    $('#score').text(score);
+
+                    if (score > highscore) {
+                        highscore = score;
+                        $('#highscore').text(highscore);
+                    }
+                }
+            });
+
+            // 重置遊戲
+            $('#resetBtn').click(function () {
+                score = 168;
+                countdown = 60;
+                $('#score').text(score);
+                $('#timer').text(countdown);
+                $('#startBtn').text('開始');
+                clearInterval(timer);
+                isGameStarted = false;
+            });
+
+            // 倒數計時
+            function startCountdown() {
+                timer = setInterval(function () {
+                    if (countdown > 0) {
+                        countdown--;
+                        $('#timer').text(countdown);
+                    } else {
+                        clearInterval(timer);
+                        alert('遊戲結束！');
+                    }
+                }, 1000);
+            }
+
+            // 隨機背景顏色（淺色系範圍）
+            function randomBackgroundColor() {
+                const randomColor = `rgb(${Math.floor(Math.random() * 156) + 100}, ${Math.floor(Math.random() * 156) + 100}, ${Math.floor(Math.random() * 156) + 100})`;
+                $('body').css('background-color', randomColor);
+            }
+
+            // 每秒隨機更換背景顏色
+            setInterval(randomBackgroundColor, 1000);
+        });
+    </script>
+</body>
+
+</html>
